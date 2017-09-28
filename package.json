@@ -10,7 +10,8 @@
     "babel": "babel --out-dir lib src",
     "build": "NODE_ENV=production npm run babel",
     "build:watch": "NODE_ENV=development npm run babel -- --watch",
-    "prepublish": "rm -rf lib/* && npm run build"
+    "prepublish": "rm -rf lib/* && npm run build",
+    "prepare": "rm -rf lib/* && npm run build"
   },
   "dependencies": {
     "connect-history-api-fallback": "^1.3.0",
