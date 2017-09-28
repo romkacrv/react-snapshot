@@ -23,6 +23,7 @@ export default (protocol, host, path, delay) => {
       },
       virtualConsole: jsdom.createVirtualConsole().sendTo(console),
       created: (err, window) => {
+        window.URL = { createObjectURL: () => {} }
         if (err) reject(err)
         window.react_snapshot_render = (element, state) => {
           render_called = { element, state }
